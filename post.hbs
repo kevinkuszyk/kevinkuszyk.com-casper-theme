@@ -22,12 +22,17 @@
             <h1 class="post-title">{{title}}</h1>
             <section class="post-meta">
                 <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" on "}}
+                <span class="disqus-comment-count" data-disqus-identifier="ghost-{{id}}">0 Comments</span>
             </section>
         </header>
 
         <section class="post-content">
             {{content}}
         </section>
+
+
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
         <footer class="post-footer">
 
@@ -95,5 +100,21 @@
     </a>
     {{/prev_post}}
 </aside>
+
+<script>
+    var disqus_config = function () {
+        this.page.url = '{{url absolute="true"}}'; 
+        this.page.identifier = 'ghost-{{id}}'; 
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+
+    s.src = '//kevinkuszyk.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
 
 {{/post}}
