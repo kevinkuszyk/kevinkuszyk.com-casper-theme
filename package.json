@@ -1,4 +1,5 @@
 {
-  "name": "Casper",
-  "version": "1.2.5"
+  "name": "custom-casper",
+  "version": "2.0.0",
+  "author": { "email": "kevin@kevinkuszyk.com" }
 }
